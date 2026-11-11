@@ -1,0 +1,43 @@
+:root {
+  --ejs-ink: #1f2328;
+  --ejs-muted: #59636e;
+  --ejs-line: #d1d9e0;
+  --ejs-surface: #ffffff;
+  --ejs-accent: #0969da;
+  --ejs-danger: #d1242f;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ejs-ink: #f0f6fc;
+    --ejs-muted: #9198a1;
+    --ejs-line: #3d444d;
+    --ejs-surface: #0d1117;
+    --ejs-accent: #4493f8;
+    --ejs-danger: #f85149;
+  }
+}
+.ejs-gallery { color: var(--ejs-ink); }
+.ejs-gallery-btn {
+  font: inherit; font-size: 13px; padding: 5px 10px; border-radius: 6px; cursor: pointer;
+  color: var(--ejs-ink); background: var(--ejs-surface); border: 1px solid var(--ejs-line);
+}
+.ejs-gallery-btn:hover:not(:disabled) { border-color: var(--ejs-accent); }
+.ejs-gallery-btn:disabled { opacity: 0.5; cursor: default; }
+.ejs-gallery-input {
+  font: inherit; width: 100%; box-sizing: border-box; padding: 6px 8px; border-radius: 6px;
+  color: var(--ejs-ink); background: var(--ejs-surface); border: 1px solid var(--ejs-line);
+}
+.ejs-gallery-input[aria-invalid='true'] { border-color: var(--ejs-danger); }
+.ejs-gallery-label { display: block; font-size: 12px; color: var(--ejs-muted); margin-top: 8px; }
+.ejs-gallery-label .ejs-gallery-input { margin-top: 3px; }
+.ejs-gallery-error { color: var(--ejs-danger); font-size: 13px; min-height: 0; }
+.ejs-gallery-field { display: flex; flex-direction: column; gap: 6px; }
+.ejs-gallery-img { max-width: 100%; max-height: 320px; object-fit: contain; border-radius: 6px; background: var(--ejs-line); align-self: flex-start; }
+.ejs-gallery-empty { padding: 24px; text-align: center; color: var(--ejs-muted); border: 1px dashed var(--ejs-line); border-radius: 6px; }
+.ejs-gallery-bar { display: flex; flex-wrap: wrap; gap: 6px; }
+.ejs-gallery-text { min-height: 1.4em; outline: none; padding: 6px 8px; border: 1px solid var(--ejs-line); border-radius: 6px; background: var(--ejs-surface); }
+.ejs-gallery-text:empty::before { content: attr(data-placeholder); color: var(--ejs-muted); }
+.ejs-gallery { display: flex; flex-direction: column; gap: 10px; }
+.ejs-gallery-item { display: flex; flex-direction: column; gap: 6px; padding: 8px; border: 1px solid var(--ejs-line); border-radius: 8px; }
+.ejs-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; }
+.ejs-gallery-move { display: flex; gap: 6px; }
